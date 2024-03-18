@@ -2,6 +2,7 @@ all:
   hosts:
     hnd-axs-d:
     fra3-axs-a:
+    hnd4-axs-b:
   vars:
     ansible_connection: network_cli
     ansible_port: 22
