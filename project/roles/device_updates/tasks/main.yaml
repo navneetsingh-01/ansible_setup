@@ -1,7 +1,15 @@
 ---
 - block:
-    - name:  testing
+    - name: testing
       debug:
         msg: "Using test variable {{ test }}"
 
-        
+    - name: Gather CPU usage and free memory
+      ios_command:
+        commands:
+          - "show processes cpu"
+      register: output
+
+    - name: testing output
+      debug:
+        msg: "{{ output }}"
