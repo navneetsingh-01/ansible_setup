@@ -11,9 +11,9 @@
         ios_command:
             commands:
               - "conf t"
-        when: output is defined and 'chacha20-poly1305@openssh.com' in output.stdout
+        when: output is defined and 'chacha20-poly1305@openssh.com' in output.stdout[0]
 
       - name: Checking algorithm
         debug: 
           msg: "Algorithm not present"
-        when: output is defined and 'chacha20-poly1305@openssh.com' not in output.stdout
+        when: output is defined and 'chacha20-poly1305@openssh.com' not in output.stdout[0]
