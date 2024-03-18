@@ -7,4 +7,4 @@
   strategy: free
   tasks:
     - import_role:
-        name: device_updates
+        name: validate_algorithm

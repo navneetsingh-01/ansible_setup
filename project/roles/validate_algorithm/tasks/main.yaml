@@ -1,0 +1,21 @@
+---
+- block:
+    - name: Initial command
+      ios_command:
+        commands:
+          - "show ip ssh"
+      register: output
+
+    -block: 
+      - name: Checking algorithm
+        ios_command:
+            commands:
+              - "conf t"
+        debug: 
+          msg: "Removing algorithm"
+        when: output is defined and 'chacha20-poly1305@openssh.com' in {{ output['stdout']['msg'] }}
+
+      - name: Checking algorithm
+        debug: 
+          msg: "Algorithm not present"
+        when: output is defined and 'chacha20-poly1305@openssh.com' not in {{ output['stdout']['msg'] }}
