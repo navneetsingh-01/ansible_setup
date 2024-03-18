@@ -6,7 +6,7 @@
           - "show ip ssh"
       register: output
 
-    -block: 
+    - block: 
       - name: Checking algorithm
         ios_command:
             commands:
