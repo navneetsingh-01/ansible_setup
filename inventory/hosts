@@ -2,8 +2,11 @@ all:
   hosts:
     hnd-axs-d:
     fra3-axs-a:
-    hnd4-axs-b:
-    gsoc-cdst-a:
+    fra4-axs-1:
+    fra4-axs-6:
+    fra4-axs-5:
+    fra4-ts:
+    fra4-dst-a:
   vars:
     ansible_connection: network_cli
     ansible_port: 22
