@@ -11,8 +11,6 @@
         ios_command:
             commands:
               - "conf t"
-        debug: 
-          msg: "Removing algorithm"
         when: output is defined and 'chacha20-poly1305@openssh.com' in {{ output['stdout']['msg'] }}
 
       - name: Checking algorithm
