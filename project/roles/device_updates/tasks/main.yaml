@@ -1,0 +1,7 @@
+---
+- block:
+    - name:  testing
+      debug:
+        msg: "Using test variable {{ test }}"
+
+        
