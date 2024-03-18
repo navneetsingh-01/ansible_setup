@@ -12,8 +12,8 @@
             commands:
               - "conf t"
               - "no ip ssh server algorithm encryption chacha20-poly1305@openssh.com"
-              - "exit"
-              - "copy running-config startup-config"
+          ios_config:
+            save_when: always
           when: output is defined and 'chacha20-poly1305@openssh.com' in output.stdout[0]
 
         - name: Checking algorithm
