@@ -1,0 +1,9 @@
+---
+- name: Running commands and capturing outputs
+  hosts: all
+  connection: local
+  gather_facts: false
+  strategy: free
+  tasks:
+    - import_role:
+        name: run_commands
