@@ -46,13 +46,13 @@
 
     # - debug: msg="{{ text }}"
 
-    - name: Add {{ command }} to file
-      ansible.builtin.blockinfile:
-        path: "{{ check_type }}check_{{ inventory_hostname }}.txt"
-        marker: "################## {mark} OF {{ command }} OUTPUT ##################\n\n\n"
-        marker_begin: START
-        marker_end: END
-        block: "{{ text.stdout[0] }}"
+    # - name: Add {{ command }} to file
+    #   ansible.builtin.blockinfile:
+    #     path: "{{ check_type }}check_{{ inventory_hostname }}.txt"
+    #     marker: "################## {mark} OF {{ command }} OUTPUT ##################\n\n\n"
+    #     marker_begin: START
+    #     marker_end: END
+    #     block: "{{ text.stdout[0] }}"
 
     - name: write {{ command }} to individual command file
       ansible.builtin.copy:
