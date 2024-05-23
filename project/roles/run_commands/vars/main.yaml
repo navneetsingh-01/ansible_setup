@@ -1,5 +1,62 @@
 ---
 check_commands:
   ios:
-    - cmd: show run
-      file: show_run.txt
+    - cmd: sh module
+      file: show_module.txt
+
+    - cmd: sh env
+      file: show_env.txt
+
+    - cmd: sh cdp neigh
+      file: show_cdp_neigh.txt
+
+    - cmd: sh auth session
+      file: show_auth_session.txt
+
+    - cmd: sh ip int br | ex unassigned
+      file: show_ip_int.txt
+
+    - cmd: sh int status vlan 2
+      file: show_int_status_2.txt
+
+    - cmd: sh int status vlan 3
+      file: show_int_status_3.txt
+
+    - cmd: sh int status vlan 6
+      file: show_int_status_6.txt
+
+    - cmd: sh int status vlan 10
+      file: show_int_status_10.txt
+
+    - cmd: sh int status | in connected
+      file: show_int_status_connected.txt
+
+    - cmd: sh mac address-table vlan 2
+      file: show_mac_addr_2.txt
+
+    - cmd: sh mac address-table vlan 3
+      file: show_mac_addr_3.txt
+
+    - cmd: sh mac address-table vlan 6
+      file: show_mac_addr_6.txt
+
+    - cmd: sh mac address-table vlan 10
+      file: show_mac_addr_10.txt
+
+    - cmd: sh mac address-table vlan 20
+      file: show_mac_addr_20.txt
+
+    - cmd: sh ip arp vlan 2
+      file: show_ip_arp_2.txt
+
+    - cmd: sh ip arp vlan 3
+      file: show_ip_arp_3.txt
+
+    - cmd: sh ip arp vlan 6
+      file: show_ip_arp_6.txt
+
+    - cmd: sh ip arp vlan 10
+      file: show_ip_arp_10.txt
+
+    - cmd: sh ip arp vlan 20
+      file: show_ip_arp_20.txt
