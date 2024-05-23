@@ -1,27 +1,22 @@
 ---
 - block:
-  - name: Creates directory
-    file:
-      path: 'outputs/{{ inventory_hostname }}'
-      state: directory
-    run_once: true
+    - name: Creates directory
+      file:
+        path: "outputs/{{ inventory_hostname }}"
+        state: directory
+      run_once: true
 
-  - name: Remove existing file if it exists
-    file:
-      path: 'precheck_{{ inventory_hostname }}.txt'
-      state: absent
+    - name: Remove existing file if it exists
+      file:
+        path: "precheck_{{ inventory_hostname }}.txt"
+        state: absent
 
-  - name: Creates file
-    file:
-      path: 'precheck_{{ inventory_hostname }}.txt'
-      state: touch
-
-  - name: IOS run commands and capture
-    include_role:
-      name: command_capture
-    vars:
-      command: "{{ item.cmd }}"
-      file_name: "{{ item.file }}"
-      device_type: ios
-      check_type: pre
-    loop: "{{ check_commands.ios }}"
+    - name: IOS run commands and capture
+      include_role:
+        name: command_capture
+      vars:
+        command: "{{ item.cmd }}"
+        file_name: "{{ item.file }}"
+        device_type: ios
+        check_type: pre
+      loop: "{{ check_commands.ios }}"
