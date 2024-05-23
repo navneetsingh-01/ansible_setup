@@ -4,20 +4,17 @@
     file:
       path: 'outputs/{{ inventory_hostname }}'
       state: directory
-    when: output is defined
     run_once: true
 
   - name: Remove existing file if it exists
     file:
       path: 'precheck_{{ inventory_hostname }}.txt'
       state: absent
-    when: output is defined
 
   - name: Creates file
     file:
       path: 'precheck_{{ inventory_hostname }}.txt'
       state: touch
-    when: output is defined
 
   - name: IOS run commands and capture
     include_role:
