@@ -1,11 +1,11 @@
 ---
 - block:
   - name: Creates directory
-      file:
-        path: 'outputs/{{ inventory_hostname }}'
-        state: directory
-      when: output is defined
-      run_once: true
+    file:
+      path: 'outputs/{{ inventory_hostname }}'
+      state: directory
+    when: output is defined
+    run_once: true
 
   - name: Remove existing file if it exists
     file:
