@@ -1,5 +1,5 @@
 ---
-commands:
+check_commands:
   ios:
     - cmd: show run
       file: show_run.txt
