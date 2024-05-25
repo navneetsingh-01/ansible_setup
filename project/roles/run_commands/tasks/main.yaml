@@ -2,7 +2,7 @@
 - block:
     - name: Creates directory
       file:
-        path: "outputs/{{ inventory_hostname }}/{{ env_level_commands }}"
+        path: "outputs/{{ inventory_hostname }}/env_level_commands"
         state: directory
       run_once: true
 
