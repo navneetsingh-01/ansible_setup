@@ -57,6 +57,6 @@
     - name: write {{ command }} to individual command file
       ansible.builtin.copy:
         content: "{{ text.stdout[0] }}"
-        dest: "outputs/{{ inventory_hostname }}/{{ file_name }}"
+        dest: "outputs/{{ inventory_hostname }}/{{ category }}/{{ file_name }}"
 
   when: (nxos_output is defined and nxos_output.stdout is defined) or (ios_output is defined and ios_output.stdout is defined)

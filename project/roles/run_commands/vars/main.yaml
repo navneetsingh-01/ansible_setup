@@ -1,5 +1,5 @@
 ---
-check_commands:
+env_level_commands:
   ios:
     - cmd: sh module
       file: show_module.txt
@@ -16,47 +16,60 @@ check_commands:
     - cmd: sh ip int br | ex unassigned
       file: show_ip_int.txt
 
-    - cmd: sh int status vlan 2
-      file: show_int_status_2.txt
-
-    - cmd: sh int status vlan 3
-      file: show_int_status_3.txt
-
-    - cmd: sh int status vlan 6
-      file: show_int_status_6.txt
-
-    - cmd: sh int status vlan 10
-      file: show_int_status_10.txt
-
     - cmd: sh int status | in connected
       file: show_int_status_connected.txt
+
+vlan_2:
+  ios:
+    - cmd: sh int status vlan 2
+      file: show_int_status_2.txt
 
     - cmd: sh mac address-table vlan 2
       file: show_mac_addr_2.txt
 
-    - cmd: sh mac address-table vlan 3
-      file: show_mac_addr_3.txt
-
-    - cmd: sh mac address-table vlan 6
-      file: show_mac_addr_6.txt
-
-    - cmd: sh mac address-table vlan 10
-      file: show_mac_addr_10.txt
-
-    - cmd: sh mac address-table vlan 20
-      file: show_mac_addr_20.txt
-
     - cmd: sh ip arp vlan 2
       file: show_ip_arp_2.txt
+
+vlan_3:
+  ios:
+    - cmd: sh int status vlan 3
+      file: show_int_status_3.txt
+
+    - cmd: sh mac address-table vlan 3
+      file: show_mac_addr_3.txt
 
     - cmd: sh ip arp vlan 3
       file: show_ip_arp_3.txt
 
+vlan_6:
+  ios:
+    - cmd: sh int status vlan 6
+      file: show_int_status_6.txt
+
+    - cmd: sh mac address-table vlan 6
+      file: show_mac_addr_6.txt
+
     - cmd: sh ip arp vlan 6
       file: show_ip_arp_6.txt
 
+vlan_10:
+  ios:
+    - cmd: sh int status vlan 10
+      file: show_int_status_10.txt
+
+    - cmd: sh mac address-table vlan 10
+      file: show_mac_addr_10.txt
+
     - cmd: sh ip arp vlan 10
       file: show_ip_arp_10.txt
+
+vlan_20:
+  ios:
+    - cmd: sh int status vlan 20
+      file: show_int_status_20.txt
+
+    - cmd: sh mac address-table vlan 20
+      file: show_mac_addr_20.txt
 
     - cmd: sh ip arp vlan 20
       file: show_ip_arp_20.txt

@@ -6,11 +6,6 @@
         state: directory
       run_once: true
 
-    - name: Remove existing file if it exists
-      file:
-        path: "precheck_{{ inventory_hostname }}.txt"
-        state: absent
-
     - name: IOS run commands and capture
       include_role:
         name: command_capture
@@ -19,4 +14,5 @@
         file_name: "{{ item.file }}"
         device_type: ios
         check_type: pre
-      loop: "{{ check_commands.ios }}"
+        category: env_level_commands
+      loop: "{{ env_level_commands.ios }}"
