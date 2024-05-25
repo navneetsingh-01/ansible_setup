@@ -16,3 +16,93 @@
         check_type: pre
         category: env_level_commands
       loop: "{{ env_level_commands.ios }}"
+
+- block:
+    - name: Creates directory
+      file:
+        path: "outputs/{{ inventory_hostname }}/vlan_2"
+        state: directory
+      run_once: true
+
+    - name: IOS run commands and capture
+      include_role:
+        name: command_capture
+      vars:
+        command: "{{ item.cmd }}"
+        file_name: "{{ item.file }}"
+        device_type: ios
+        check_type: pre
+        category: vlan_2
+      loop: "{{ vlan_2.ios }}"
+
+- block:
+    - name: Creates directory
+      file:
+        path: "outputs/{{ inventory_hostname }}/vlan_3"
+        state: directory
+      run_once: true
+
+    - name: IOS run commands and capture
+      include_role:
+        name: command_capture
+      vars:
+        command: "{{ item.cmd }}"
+        file_name: "{{ item.file }}"
+        device_type: ios
+        check_type: pre
+        category: vlan_3
+      loop: "{{ vlan_3.ios }}"
+
+- block:
+    - name: Creates directory
+      file:
+        path: "outputs/{{ inventory_hostname }}/vlan_6"
+        state: directory
+      run_once: true
+
+    - name: IOS run commands and capture
+      include_role:
+        name: command_capture
+      vars:
+        command: "{{ item.cmd }}"
+        file_name: "{{ item.file }}"
+        device_type: ios
+        check_type: pre
+        category: vlan_6
+      loop: "{{ vlan_6.ios }}"
+
+- block:
+    - name: Creates directory
+      file:
+        path: "outputs/{{ inventory_hostname }}/vlan_10"
+        state: directory
+      run_once: true
+
+    - name: IOS run commands and capture
+      include_role:
+        name: command_capture
+      vars:
+        command: "{{ item.cmd }}"
+        file_name: "{{ item.file }}"
+        device_type: ios
+        check_type: pre
+        category: vlan_10
+      loop: "{{ vlan_10.ios }}"
+  
+- block:
+    - name: Creates directory
+      file:
+        path: "outputs/{{ inventory_hostname }}/vlan_20"
+        state: directory
+      run_once: true
+
+    - name: IOS run commands and capture
+      include_role:
+        name: command_capture
+      vars:
+        command: "{{ item.cmd }}"
+        file_name: "{{ item.file }}"
+        device_type: ios
+        check_type: pre
+        category: vlan_20
+      loop: "{{ vlan_20.ios }}"
