@@ -1,6 +1,18 @@
 all:
   hosts:
-    hyd1-axs-15c:
+    hyd2-axs-0a:
+    hyd2-axs-0b:
+    hyd2-axs-0c:
+    hyd2-axs-0d:
+    hyd2-axs-0e:
+    hyd2-axs-0f:
+    hyd2-axs-0g:
+    hyd2-axs-15a:
+    hyd2-axs-16a:
+    hyd2-axs-17a:
+    hyd2-axs-18a:
+    hyd2-axs-19a:
+    hyd2-axs-20a:
   vars:
     ansible_connection: network_cli
     ansible_port: 22
